@@ -1,6 +1,10 @@
 add_library(myCP-lib STATIC
+                        integrate.c
+                        minimum.c
+                        numerov.c
                         print_routines.c
-
+                        verlet.c
+                        zeros_newton.c
 )
 
 target_include_directories(myCP-lib PUBLIC
