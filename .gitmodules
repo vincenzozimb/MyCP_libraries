@@ -1,3 +1,0 @@
-[submodule "extern/gnuplot_i"]
-	path = extern/gnuplot_i
-	url = git@github.com:pingplug/gnuplot_i.git
