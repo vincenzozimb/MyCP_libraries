@@ -14,7 +14,7 @@ target_include_directories(myCP-lib PUBLIC
 target_compile_options(myCP-lib PRIVATE -Wall -O3 -march=native -ffast-math -std=c11)
 target_link_libraries(myCP-lib m)
 
-target_link_libraries(myCP-lib extern/gnuplot_i)
+#target_link_libraries(myCP-lib extern/gnuplot_i)
 
 # Collect header files in include dir for installation
 #file(GLOB_RECURSE INCLUDE_FILES "${PROJECT_SOURCE_DIR}/include/*.h")

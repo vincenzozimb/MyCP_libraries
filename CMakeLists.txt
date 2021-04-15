@@ -8,12 +8,13 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 add_compile_definitions(EPS=1e-6)
 
 # List here the directories in extern
-add_subdirectory(extern/gnuplot_i)
+#add_subdirectory(extern/gnuplot_i)
 
 # 
 add_subdirectory(src)
 
 
+# ------------------------------------------------------------------------ #
 # documentation by doxygen (you have to create a directory "docs" first)
 option(DOCS "Build the documentation" OFF)
 
