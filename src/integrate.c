@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <math.h>
 #include <integrate.h>
+#include <gnuplot_i.h>
 
 double integrate(double f(double, void *), double low, double high, int density, void *param) {
 	
