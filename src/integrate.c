@@ -1,6 +1,5 @@
 #include <assert.h>
 #include <math.h>
-
 #include <integrate.h>
 
 double integrate(double f(double, void *), double low, double high, int density, void *param) {
