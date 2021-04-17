@@ -14,6 +14,16 @@
 void fprint_double (FILE *file, double d);
 
 /**
+ * @brief Print a double vector to a specified file.
+ * 
+ * @param file The file handler of type FILE for the ouput file. If you want to print to terminal, use stdout
+ * @param vec The vector of double to be printed to file
+ * 
+ * @return
+ */
+void fprint_vec(FILE *file, double vec[], int dim);
+
+/**
  * @brief Print a matrix to a specified file, using tab as the separator.
  * 
  * @param file The file handler of type FILE for the ouput file. If you want to print to terminal, use stdout
