@@ -5,7 +5,7 @@ add_library(myCP-lib STATIC
                         print_routines.c
                         verlet.c
                         zeros_newton.c
-                        #mygnuplot.c        # decommentare quando capisco come aggiungere
+                        gnuplot_i.c
 )
 
 target_include_directories(myCP-lib PUBLIC
