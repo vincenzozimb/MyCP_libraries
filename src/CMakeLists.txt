@@ -1,10 +1,10 @@
 add_library(myCP-lib STATIC
-                        integrate.c
-                        minimum.c
-                        numerov.c
+                        numerical_methods/integrate.c
+                        numerical_methods/minimum.c
+                        numerical_methods/zeros_newton.c
+                        differential_eq/numerov.c
+                        differential_eq/verlet.c
                         print_routines.c
-                        verlet.c
-                        zeros_newton.c
                         gnuplot_i.c
 )
 

@@ -4,11 +4,11 @@
 
 #include <minimum.h>
 
-double minimum(double f(double, void *), double low, double high, void *p) {
+double minimum(double f(double, void *), double low, double high, void *p){
 	
     assert(low <= high);
-	assert(isfinite(low));
-	assert(isfinite(high));
+	assert(isfinite(low) && isfinite(high));
+
 	double x1, x2, x3, x4;
 	x1 = low;
 	x4 = high;
