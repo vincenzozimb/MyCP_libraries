@@ -1,4 +1,4 @@
-#include <blas_wrappers.h>
+#include <linear_algebra/blas_wrappers.h>
 
 #include <assert.h>
 #include <cblas-openblas.h>

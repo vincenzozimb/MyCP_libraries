@@ -1,4 +1,4 @@
-#include <numerov.h>
+#include <differential_eq/numerov.h>
 #include <complex.h>
 
 double complex numerov_step(double x, double dx,
@@ -16,7 +16,7 @@ void execute_numerov_complex(double x[], complex double psi[], int dim, double d
                              double F(double, void *), void *p){
     int i = 2;
     while (i < dim){
-        complex double psi_curr = numerov_1D(x[i - 1], psi[i - 1], psi[i - 2], dx, F, p);
+        complex double psi_curr = numerov_step(x[i - 1], psi[i - 1], psi[i - 2], dx, F, p);
         psi[i] = psi_curr;
         x[i] = x[i - 1] + dx;
         i++;

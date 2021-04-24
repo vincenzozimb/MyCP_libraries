@@ -15,13 +15,13 @@ target_include_directories(myCP-lib PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 target_compile_options(myCP-lib PRIVATE -Wall -O3 -march=native -ffast-math -std=c11)
-target_link_libraries(myCP-lib m)
+target_link_libraries(myCP-lib)
 
 #target_link_libraries(myCP-lib extern/gnuplot_i)
 
 # Collect header files in include dir for installation
-#file(GLOB_RECURSE INCLUDE_FILES "${PROJECT_SOURCE_DIR}/include/*.h")
-#set_target_properties(myCP-lib PROPERTIES PUBLIC_HEADER "${INCLUDE_FILES}")
+# file(GLOB_RECURSE INCLUDE_FILES "${PROJECT_SOURCE_DIR}/include/*.h")
+# set_target_properties(myCP-lib PROPERTIES PUBLIC_HEADER "${INCLUDE_FILES}")
 
 #include(GNUInstallDirs)
 set(CMAKE_INSTALL_LIBDIR $ENV{HOME}/.local)

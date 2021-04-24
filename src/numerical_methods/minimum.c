@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 
-#include <minimum.h>
+#include <numerical_methods/minimum.h>
 
 double minimum(double f(double, void *), double low, double high, void *p){
 	

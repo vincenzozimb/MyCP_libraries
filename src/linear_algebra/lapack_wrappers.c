@@ -1,5 +1,5 @@
-#include <array_routines.h>
-#include <lapack_wrappers.h>
+#include <linear_algebra/array_routines.h>
+#include <linear_algebra/lapack_wrappers.h>
 
 #include <assert.h>
 #include <complex.h>
