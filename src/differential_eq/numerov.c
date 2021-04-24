@@ -6,9 +6,9 @@ double complex numerov_step(double x, double dx,
                             double F(double, void *), void *p){
 
     double ris;
-    ris = (2 + 5 * dx * dx * F(x, p) / 6) * psi_curr;
-    ris -= (1 - dx * dx * F(x - dx, p) / 12) * psi_prec;
-    ris /= 1 - dx * dx * F(x + dx, p) / 12;
+    ris = (2.0 + 5.0 * dx * dx * F(x, p) / 6.0) * psi_curr;
+    ris -= (1.0 - dx * dx * F(x - dx, p) / 12.0) * psi_prec;
+    ris /= 1.0 - dx * dx * F(x + dx, p) / 12.0;
     return ris;
 }
 
