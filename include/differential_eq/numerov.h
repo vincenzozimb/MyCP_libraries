@@ -40,11 +40,9 @@
  * @return complex double
  * The value of psi(x+dx) 
  */
-double complex numerov_step (double x, complex double psi_curr, complex double psi_prec, double dx, double F (double, void *), void *param);
-
-// double complex numerov_step(double x, double dx,
-//                             complex double psi_curr, complex double psi_prec,
-//                             double F(double, void *), void *p);
+double complex numerov_step(double x, double dx,
+                            complex double psi_curr, complex double psi_prec,
+                            double F(double, void *), void *p);
 
 
 /**
