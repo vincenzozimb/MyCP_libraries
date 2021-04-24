@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "array_routines.h": "c",
-        "verlet.h": "c"
+        "verlet.h": "c",
+        "integrate.h": "c",
+        "minimum.h": "c",
+        "zeros_newton.h": "c"
     }
 }

@@ -1,4 +1,4 @@
-#include <differential_eq/numerov.h>
+#include <numerov.h>
 #include <complex.h>
 
 double complex numerov_step(double x, double dx,

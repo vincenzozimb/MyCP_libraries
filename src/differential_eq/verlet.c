@@ -1,4 +1,4 @@
-#include <differential_eq/verlet.h>
+#include <verlet.h>
 
 void verlet_1D(double *x, double *v, double dt, double acc(double, void *), void *p){
 	*v += dt / 2 * acc(*x, p);
