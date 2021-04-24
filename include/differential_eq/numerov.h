@@ -56,7 +56,7 @@ double complex numerov_step(double x, double dx,
  * 
  * @return
  */
-void execute_numerov_complex(double x[], complex double psi[], int dim, double dx,
+void execute_numerov_complex(double x[], double dx, complex double psi[], int dim,
                              double F(double, void *), void *p);
 
 #endif

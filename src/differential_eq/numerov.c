@@ -12,13 +12,12 @@ double complex numerov_step(double x, double dx,
     return ris;
 }
 
-void execute_numerov_complex(double x[], complex double psi[], int dim, double dx,
+void execute_numerov_complex(double x[], double dx, complex double psi[], int dim,
                              double F(double, void *), void *p){
     int i = 2;
     while (i < dim){
-        complex double psi_curr = numerov_step(x[i - 1], psi[i - 1], psi[i - 2], dx, F, p);
-        psi[i] = psi_curr;
-        x[i] = x[i - 1] + dx;
+        psi[i] = numerov_step(x[i-1], dx, psi[i-1], psi[i-2], F, p);
+        x[i] = x[i-1] + dx;
         i++;
     }
 }
