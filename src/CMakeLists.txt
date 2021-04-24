@@ -4,6 +4,9 @@ add_library(myCP-lib STATIC
                         numerical_methods/zeros_newton.c
                         differential_eq/numerov.c
                         differential_eq/verlet.c
+                        linear_algebra/array_routines.c
+                        linear_algebra/blas_wrappers.c
+                        linear_algebra/lapack_wrappers.c
                         print_routines.c
                         gnuplot_i.c
 )

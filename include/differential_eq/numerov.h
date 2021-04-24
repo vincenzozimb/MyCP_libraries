@@ -17,14 +17,12 @@
 */
 /*--------------------------------------------------------------------------*/
 
-
 #ifndef __NUMEROV_H__
 #define __NUMEROV_H__
 
 #include <complex.h>
 
-
-/* -------------------- *//* FUNCTION *//*------------------------ */
+/* -------------------- */ /* FUNCTION */ /*------------------------ */
 
 /**
  * @brief Step of the numerov algorithm to solve schrodinger equation.
@@ -42,8 +40,23 @@
  * @return complex double
  * The value of psi(x+dx) 
  */
-double complex numerov_step(double x, double dx, 
+double complex numerov_step(double x, double dx,
                             complex double psi_curr, complex double psi_prec,
-                            double F (double, void*), void *p );
+                            double F(double, void *), void *p);
+
+
+/**
+ * @brief Execute the numerov algorithm and fill e vector with the value of the wave function.
+ * 
+ * @param x Array to store the values of the independent variable. The first two elements should be already initialized.
+ * @param psi Array to store the values of the wave function. The first two elements should be already initialized.
+ * @param dim Dimension of the array x and psi.
+ * @param F Function F in the equation psi''(x) = F(x)*psi(x).
+ * @param param Pointer to the struct with the parameters of F.
+ * 
+ * @return
+ */
+void execute_numerov_complex(double x[], complex double psi[], int dim, double dx,
+                             double F(double, void *), void *p);
 
 #endif
