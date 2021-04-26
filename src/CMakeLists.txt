@@ -2,6 +2,7 @@ add_library(myCP-lib STATIC
                         numerical_methods/integrate.c
                         numerical_methods/minimum.c
                         numerical_methods/zeros_newton.c
+                        numerical_methods/bisection.c
                         differential_eq/numerov.c
                         differential_eq/verlet.c
                         linear_algebra/array_routines.c
