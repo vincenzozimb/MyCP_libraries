@@ -3,7 +3,7 @@
 #include <numerical_methods/derivate.h>
 
 double derivate(double f(double,void*), double x0, double dx, void *p){
-    return ( f(x0+dx,p) - f(x0+dx,p) ) / (2*dx);
+    return ( f(x0+dx,p) - f(x0-dx,p) ) / (2*dx);
 }
 
 double derivate_best(double f(double,void*), double x0, double dx, void *p){
