@@ -6,6 +6,7 @@ add_library(myCP-lib STATIC
                         numerical_methods/derivate.c
                         differential_eq/numerov.c
                         differential_eq/verlet.c
+                        differential_eq/runge_kutta.c
                         linear_algebra/array_routines.c
                         linear_algebra/blas_wrappers.c
                         linear_algebra/lapack_wrappers.c
