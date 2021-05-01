@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "array_routines.h": "c",
-        "verlet.h": "c"
+        "verlet.h": "c",
+        "derivate.h": "c"
     }
 }

@@ -1,6 +1,7 @@
 #include <print_routines.h>
 
 #include <stdio.h>
+#include <assert.h>
 
 void fprint_double(FILE *file, double d){
 	fprintf(file, "%lf\t", d);
