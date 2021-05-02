@@ -35,3 +35,11 @@ void fprint_mat_complex(FILE *file, _Complex double (*A), int nrows, int ncols) 
 	}
 	fprintf(file, "\n");
 }
+
+void print_two_vec(FILE *file, double v1[], double v2[], int dim){
+	assert(dim>0);
+	for(int i=0;i<dim;i++){
+		fprintf(file,"%lf\t",v1[i]);
+		fprintf(file,"%lf\n",v2[i]);
+	}
+}
