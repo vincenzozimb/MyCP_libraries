@@ -74,6 +74,6 @@ void fprint_mat_complex(FILE *file, _Complex double (*A), int nrows, int ncols);
  * 
  * @return void 
  */
-void print_two_vec(FILE *file, double v1[], double v2[], int dim);
+void fprint_two_vec(FILE *file, double v1[], double v2[], int dim);
 
 #endif
