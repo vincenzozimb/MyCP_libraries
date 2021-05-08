@@ -7,6 +7,10 @@ void fprint_double(FILE *file, double d){
 	fprintf(file, "%lf\t", d);
 }
 
+void fprint_double_newline (FILE *file, double d) {
+	fprintf(file, "%lf\n", d);
+}
+
 void fprint_vec(FILE *file, double vec[], int dim){
 	for(int i=0;i<dim;i++){
 		fprintf(file,"%lf\n",vec[i]);
