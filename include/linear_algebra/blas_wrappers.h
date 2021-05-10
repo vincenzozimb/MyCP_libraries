@@ -13,6 +13,17 @@
 void vec_copy (int N, double src[], double dest[]);
 
 /**
+ * @brief Copy the complex double vector src into the complex double vector dest
+ * 
+ * @param N common dimension of src and dest
+ * @param src vector to be copied
+ * @param dest destination vector
+ * 
+ * @return void
+ */
+void vec_complex_copy(int N, _Complex double src[], _Complex double dest[]);
+
+/**
  * @brief Execute matrix vector multiplication
  * 
  * @param nrows number of rows of the matrix

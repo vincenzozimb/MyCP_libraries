@@ -8,6 +8,10 @@ void vec_copy (int N, double src[], double dest[]){
 	cblas_dcopy(N, (double *)src, 1, (double *)dest, 1);
 }
 
+void vec_complex_copy(int N, _Complex double src[], _Complex double dest[]){
+	cblas_ccopy(N, (_Complex double *)src, 1, (_Complex double *)dest, 1);
+}
+
 void mat_vec_mul(int nrows, int ncols, double *M, double *v, double *res) {
 	assert(nrows > 0 && ncols > 0);
 	cblas_dgemv(CblasRowMajor, CblasNoTrans, nrows, ncols, 1, M, ncols, v, 1, 0, res, 1);
