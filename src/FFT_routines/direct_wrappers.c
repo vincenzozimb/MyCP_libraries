@@ -9,8 +9,8 @@
 /*============================= DA TESTARE =================================*/
 void fourier_transform_ord(const complex double f[], double L, int N, double k[], complex double F[]) {
 	
-    /* check if N is divisible by 2 */
-    assert(N % 2 == 0);
+    /* check if N is a power of 2 */
+    // write the assertion, using the logarithm
 
     /* copy f into a temporary vector */
     complex double prov[N];
