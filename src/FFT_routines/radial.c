@@ -18,16 +18,13 @@ void radial_FFT(double r[], double f[], double L, double dr, int N, double k[], 
     }
 
     /* odd extensions */
-    double r2[2*N], A2[2*N];
+    double A2[2*N];
     for(int i=0;i<2*N;i++){
         if(i < N){
-            r2[i] = r[i];
             A2[i] = A[i];
         }else if(N < i && i < 2*N){
-            r2[i] = -r[2*N-i];
             A2[i] = -A[2*N-i];
         }else{
-            r2[i] = 0.0;
             A2[i] = 0.0;
         }
     }
@@ -90,16 +87,13 @@ void radial_IFFT(double k[], double F[], double L, double dk, int N, double r[],
     }
 
     /* odd extensions */
-    double k2[2*N], B2[2*N];
+    double B2[2*N];
     for(int i=0;i<2*N;i++){
         if(i < N){
-            k2[i] = k[i];
             B2[i] = B[i];
         }else if(N < i && i < 2*N){
-            k2[i] = -k[2*N-i];
             B2[i] = -B[2*N-i];
         }else{
-            k2[i] = 0.0;
             B2[i] = 0.0;
         }
     }
