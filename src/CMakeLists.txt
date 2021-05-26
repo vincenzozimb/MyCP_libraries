@@ -10,6 +10,8 @@ add_library(myCP-lib STATIC
                         linear_algebra/array_routines.c
                         linear_algebra/blas_wrappers.c
                         linear_algebra/lapack_wrappers.c
+                        FFT_routines/radial.c
+                        FFT_routines/direct_wrappers.c
                         print_routines.c
                         gnuplot_i.c
 )
