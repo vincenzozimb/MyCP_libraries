@@ -66,7 +66,7 @@ void radial_FFT(double r[], double f[], double L, double dr, int N, double k[], 
         sum += i * i * f[i]; 
     }
     sum *= 2 * L * L / (N * N);
-    sum *= 2 * M_PI * L / N;
+    sum /= 2 * M_PI * L / N;
     
     for(int i=0;i<N;i++){
         if( k[i] == 0.0){
@@ -136,7 +136,7 @@ void radial_IFFT(double k[], double F[], double L, double dk, int N, double r[],
         sum += i * i * F[i]; 
     }
     sum *= M_PI * M_PI / (L * L * N);
-    sum /= 2 * M_PI * L / N;
+    sum *= 2 * M_PI * L / N;
     
     for(int i=0;i<N;i++){
         if( r[i] == 0.0){
