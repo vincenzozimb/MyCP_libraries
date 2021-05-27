@@ -69,12 +69,13 @@ void radial_FFT(double f[], double L, int N, double k[], double F[]){
         sum += i * i * f[i]; 
     }
     sum *= 2 * L * L / (N * N);
-    
+
+    double renorm = 2 * M_PI / L;
     for(int i=0;i<N;i++){
         if( k[i] == 0.0){
             F[i] = sum;
         }else{
-            F[i] = - 4 * M_PI * M_PI / k[i] * A2z_imag[i];
+            F[i] = - renorm * 2 * M_PI / k[i] * A2z_imag[i];
         }
     }
 
@@ -137,12 +138,13 @@ void radial_IFFT(double F[], double L, int N, double r[], double f[]){
         sum += i * i * F[i]; 
     }
     sum *= M_PI * M_PI / (L * L * N);
-    
+
+    double renorm = L / (2 * M_PI);
     for(int i=0;i<N;i++){
         if( r[i] == 0.0){
             f[i] = sum;
         }else{
-            f[i] = 1 / (4.0 * M_PI * M_PI * r[i]) * B2z_imag[i];
+            f[i] = renorm / (2 * M_PI * r[i]) * B2z_imag[i];
         }
     }
 
