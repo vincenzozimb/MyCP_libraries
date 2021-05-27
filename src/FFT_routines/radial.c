@@ -6,13 +6,18 @@
 
 #include <FFT_routines/radial.h>
 
-// TOGLIERE dr E dk 
-
-void radial_FFT(double r[], double f[], double L, double dr, int N, double k[], double F[]){
+void radial_FFT(double f[], double L, int N, double k[], double F[]){
 
     /* check if N is a power of two */
     // write the assertion
-    
+
+    /* initialize vector r */
+    double dr = L / N;
+    double r[N];
+    for(int i=0;i<N;i++){
+        r[i] = i * dr;
+    }
+
     /* initialize function A = r * f(r) */
     double A[N];
     for(int i=0;i<N;i++){
@@ -40,7 +45,7 @@ void radial_FFT(double r[], double f[], double L, double dr, int N, double k[], 
     }
     
     /* initialize frequency vector */
-    double dk = 2 * M_PI / L; 
+    double dk = M_PI / L; 
     double k2[M];
     for(int i=0;i<M;i++){
         k2[i] = dk * (i <= M/2 ? i : i - M);
@@ -77,11 +82,18 @@ void radial_FFT(double r[], double f[], double L, double dr, int N, double k[], 
 
 }
 
-void radial_IFFT(double k[], double F[], double L, double dk, int N, double r[], double f[]){
+void radial_IFFT(double F[], double L, int N, double r[], double f[]){
 
     /* check if N is a power of two */
     // write the assertion
     
+    /* initialize frequency vector */
+    double dk = M_PI / L;
+    double k[N];
+    for(int i=0;i<N;i++){
+        k[i] = dk * i;
+    }
+
     /* initialize function B = k * F(k) */
     double B[N];
     for(int i=0;i<N;i++){
