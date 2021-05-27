@@ -45,7 +45,7 @@ void radial_FFT(double f[], double L, int N, double k[], double F[]){
     }
     
     /* initialize frequency vector */
-    double dk = 2 * M_PI / L; 
+    double dk = M_PI / L; 
     double k2[M];
     for(int i=0;i<M;i++){
         k2[i] = dk * (i <= M/2 ? i : i - M);
@@ -88,7 +88,7 @@ void radial_IFFT(double F[], double L, int N, double r[], double f[]){
     // write the assertion
     
     /* initialize frequency vector */
-    double dk = 2 * M_PI / L;
+    double dk = M_PI / L;
     double k[N];
     for(int i=0;i<N;i++){
         k[i] = dk * i;
