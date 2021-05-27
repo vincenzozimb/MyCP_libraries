@@ -37,27 +37,25 @@ void radial_FFT(double f[], double L, int N, double k[], double F[]){
     }
 
     /* complexification of A2 for gsl_fft_radix2_forward */
-    int M = 2*N;
-    double A2z[2*M];
-    for(int i=0;i<M;i++){
-        A2z[2*i] = A2[i];
-        A2z[2*i+1] = 0.0;
+    complex double A2z[2*N];
+    for(int i=0;i<2*N;i++){
+        A2z[i] = A2[i];
     }
     
     /* initialize frequency vector */
     double dk = M_PI / L; 
-    double k2[M];
-    for(int i=0;i<M;i++){
-        k2[i] = dk * (i <= M/2 ? i : i - M);
+    double k2[2*N];
+    for(int i=0;i<2*N;i++){
+        k2[i] = dk * (i <= N ? i : i - 2*N);
     }
 
     /* fourier transform of A2z */
-    gsl_fft_complex_radix2_forward(A2z,1,M);
+    gsl_fft_complex_radix2_forward((double *)A2z,1,2*N);
 
     /* take the immaginary part */
-    double A2z_imag[M];
-    for(int i=0;i<M;i++){
-        A2z_imag[i] = A2z[2*i+1];
+    double A2z_imag[2*N];
+    for(int i=0;i<2*N;i++){
+        A2z_imag[i] = cimag(A2z[i]);
     }
 
     /* inizialize only the positive frequency */
@@ -113,32 +111,24 @@ void radial_IFFT(double F[], double L, int N, double r[], double f[]){
     }
 
     /* complexification of B2 for gsl_fft_radix2_inverse */
-    int M = 2*N;
-    double B2z[2*M];
-    for(int i=0;i<M;i++){
-        B2z[2*i] = B2[i];
-        B2z[2*i+1] = 0.0;
-    }
-    
-    /* initialize radial coordinate vector */
-    double dr = L / N; 
-    double r2[M];
-    for(int i=0;i<M;i++){
-        r2[i] = dr * i;
+    complex double B2z[2*N];
+    for(int i=0;i<2*N;i++){
+        B2z[i] = B2[i];
     }
 
     /* inverse fourier transform of B2z */
-    gsl_fft_complex_radix2_inverse(B2z,1,M);
+    gsl_fft_complex_radix2_inverse((double *)B2z,1,2*N);
 
     /* take the immaginary part */
-    double B2z_imag[M];
-    for(int i=0;i<M;i++){
-        B2z_imag[i] = B2z[2*i+1];
+    double B2z_imag[2*N];
+    for(int i=0;i<2*N;i++){
+        B2z_imag[i] = cimag(B2z[i]);
     }
 
     /* inizialize only the positive coordinates */
+    double dr = L / N;
     for(int i=0;i<N;i++){
-        r[i] = r2[i];
+        r[i] = i * dr;
     }
 
     /* initialize the inverse radial transform f */
