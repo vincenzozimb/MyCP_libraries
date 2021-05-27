@@ -18,7 +18,7 @@
  * @brief  Take a radial function and inizialize the radial fourier transform and the vector
  *         contening the magnitude of frequencies.
  * 
- * @param f the radial function, calculated in the position of the vector r[]
+ * @param f the radial function
  * @param L the direct space length
  * @param N the number of points. It must be a power of 2
  * @param k the N-vector you want to inizialize with the magnitude of frequencies
@@ -32,7 +32,7 @@ void radial_FFT(double f[], double L, int N, double k[], double F[]);
  * @brief  Take a radial fourier transform and inizialize the radial fourier inverse 
  *         transform and the vector contening the radial coordinate.
  * 
- * @param F the radial fourier transform, calculated in the frequencies of the vector k[]
+ * @param F the radial fourier transform
  * @param L the direct space length
  * @param N the number of points. It must be a power of 2
  * @param r the N-vector you want to inizialize with the radial coordinates
