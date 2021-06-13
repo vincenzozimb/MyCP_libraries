@@ -4,6 +4,7 @@ add_library(myCP-lib STATIC
                         numerical_methods/zeros_newton.c
                         numerical_methods/bisection.c
                         numerical_methods/derivate.c
+                        #numerical_methods/fast_squareroot.c
                         differential_eq/numerov.c
                         differential_eq/verlet.c
                         differential_eq/runge_kutta.c
