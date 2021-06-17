@@ -6,6 +6,10 @@
 
 #include <FFT_routines/radial.h>
 
+/* ============================ */
+/* DA FIXARE, VEDI MAIL PROF */
+/* ============================ */
+
 void radial_FFT(double f[], double L, int N, double k[], double F[]){
 
     /* check if N is a power of two */
