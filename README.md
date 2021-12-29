@@ -55,7 +55,7 @@ gcc <c_file> -o <executable_name> -I$HOME/.local/include -L$HOME/.local/lib -lib
 
 The source code (i.e. the .c files) is in the directory `src`.
 
-The header files are in the directory `include`. 
+The header files are in the directory `include`.
 
 ---
 
